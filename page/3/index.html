@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,559
+                  1,752
                 </span>
               
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  7
+                  8
                 </span>
               
             </div>
@@ -445,15 +445,18 @@
 
       
         
-          
-          1 数字：^[0-9]*$
-2 n位的数字：^\d{n}$
-3 至少n位的数字：^\d{n,}$
-4 m-n位的数字：^\d{m,n}$
-5 零和非零开头的数字：^(0|1-9*)$
-6 非零开头的最多带两位小数的数字：^(1-9*)+(.[0-9]{1,2})?$
-7 带1-2位小数的正数或负数：
-          ...
+          <p>汉字：^[\u4e00-\u9fa5]{0,}$</p>
+<p>英文和数字：^[A-Za-z0-9]+ 或 ^[A-Za-z0-9]{4,40}</p>
+<p>长度为3-20的所有字符：^.{3,20}$</p>
+<p>由26个英文字母组成的字符串：^[A-Za-z]+$</p>
+<p>由26个大写英文字母组成的字符串：^[A-Z]+$</p>
+<p>由26个小写英文字母组成的字符串：^[a-z]+$</p>
+<p>由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</p>
+<p>由数字、26个英文字母或者下划线组成的字符串：^\w+ 或 ^\w{3,20}</p>
+<p>中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</p>
+<p>中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}</p>
+<p>可以输入含有^%&amp;’,;=?\”等字符：%&amp;’,;=?\x22+</p>
+<p>禁止输入含有~的字符：~\x22+<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/08/25/常见正则表达式/#more" rel="contents">
@@ -612,9 +615,7 @@
 
       
         
-          
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2016/08/12/hello-world/#more" rel="contents">
@@ -823,7 +824,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.8k字</span>
+  <span class="post-count">博客全站共16.0k字</span>
 </div>
 
         

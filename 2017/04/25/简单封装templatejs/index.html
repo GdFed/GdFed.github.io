@@ -102,18 +102,18 @@
 
 
 
-<meta name="description" content="1.先来一个例子: 123456&amp;lt;script type=&quot;text/html&quot; id=&quot;template&quot;&amp;gt;&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&apos;&amp;#123;&amp;#123;&apos;name&apos;&amp;#125;&amp;#125;&apos;&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;&apos;&amp;#123;&amp;#123;&apos;skill&apos;&amp;#125;&amp;#125;&apos;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt">
+<meta name="description" content="简单封装template">
 <meta name="keywords" content="js,template">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单封装template">
 <meta property="og:url" content="https://gdfed.github.io/2017/04/25/简单封装templatejs/index.html">
 <meta property="og:site_name" content="GdFed &#39;S">
-<meta property="og:description" content="1.先来一个例子: 123456&amp;lt;script type=&quot;text/html&quot; id=&quot;template&quot;&amp;gt;&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&apos;&amp;#123;&amp;#123;&apos;name&apos;&amp;#125;&amp;#125;&apos;&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;&apos;&amp;#123;&amp;#123;&apos;skill&apos;&amp;#125;&amp;#125;&apos;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt">
+<meta property="og:description" content="简单封装template">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-17T11:51:05.878Z">
+<meta property="og:updated_time" content="2017-08-31T11:54:24.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单封装template">
-<meta name="twitter:description" content="1.先来一个例子: 123456&amp;lt;script type=&quot;text/html&quot; id=&quot;template&quot;&amp;gt;&amp;lt;ul&amp;gt;    &amp;lt;li&amp;gt;&apos;&amp;#123;&amp;#123;&apos;name&apos;&amp;#125;&amp;#125;&apos;&amp;lt;/li&amp;gt;    &amp;lt;li&amp;gt;&apos;&amp;#123;&amp;#123;&apos;skill&apos;&amp;#125;&amp;#125;&apos;&amp;lt;/li&amp;gt;&amp;lt;/ul&amp;gt;&amp;lt">
+<meta name="twitter:description" content="简单封装template">
 
 
 
@@ -405,7 +405,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  292
+                  297
                 </span>
               
 
@@ -442,7 +442,7 @@
       
 
       
-        <p>1.先来一个例子:</p>
+        <p>简单封装template<br><a id="more"></a><br>1.先来一个例子:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/html"</span> id=<span class="string">"template"</span>&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;<span class="string">'&#123;&#123;'</span>name<span class="string">'&#125;&#125;'</span>&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">    &lt;li&gt;'&#123;&#123;'skill'&#125;&#125;'&lt;/</span>li&gt;</div><div class="line">&lt;<span class="regexp">/ul&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line"><span class="keyword">var</span> data = &#123;</div><div class="line"></div><div class="line"> name: <span class="string">'jack'</span>,</div><div class="line"></div><div class="line"> skill: <span class="string">'jump'</span></div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> templateDom = <span class="built_in">document</span>.getElementById(<span class="string">'template'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> string = templateDom.innerHTML;</div><div class="line"></div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/'&#123;&#123;'(\w+)'&#125;&#125;'/</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = reg.exec(string);</div><div class="line"></div><div class="line"><span class="keyword">while</span> (result) &#123;</div><div class="line"></div><div class="line">string = string.replace(result[<span class="number">0</span>],data[result[<span class="number">1</span>]]);</div><div class="line"></div><div class="line">result = reg.exec(string);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.body.innerHTML = string;</div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <p>结果:</p>
@@ -728,7 +728,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.8k字</span>
+  <span class="post-count">博客全站共16.0k字</span>
 </div>
 
         

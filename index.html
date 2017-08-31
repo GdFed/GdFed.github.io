@@ -445,14 +445,15 @@
 
       
         
-          
-          准备科普全景图共分为三种：
-①球面全景图
-利用一张全景图围成一个球，自身位置位于球体内。由于图片是矩形，所以最上和最下的缝合处很明显就能够看得出来。
-球面全景图是最接近人眼的构建模式，若利用多个立面构建，拼接方法繁琐，性能消耗高。
-因此，本文介绍的是上述通过一张全景图构成的球面全景图。
-②立方体全景
-          ...
+          <h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><h5 id="科普"><a href="#科普" class="headerlink" title="科普"></a><strong>科普</strong></h5><p>全景图共分为三种：</p>
+<p>①球面全景图</p>
+<p>利用一张全景图围成一个球，自身位置位于球体内。由于图片是矩形，所以最上和最下的缝合处很明显就能够看得出来。</p>
+<p>球面全景图是最接近人眼的构建模式，若利用多个立面构建，拼接方法繁琐，性能消耗高。</p>
+<p>因此，本文介绍的是上述通过一张全景图构成的球面全景图。</p>
+<p>②立方体全景图</p>
+<p>一个立方体，有六个面组成，所以就需要六张图片啦。自身的位置位于立方体中间。这也是最常见的全景图构建模式。</p>
+<p>③柱状全景图</p>
+<p>这个则是前两种构建模式的结合版啦。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/06/24/3D全景图片实现/#more" rel="contents">
@@ -611,14 +612,12 @@
 
       
         
-          
-          jQuery 简洁版需求
-输入框输入点击,生成随机样式的span
-span弹幕从右往左运动
-
-实现输入框输入点击,生成随机样式的span
-123456789101112131415161718//弹幕内容var barrageVal = $('input').val();//检测的弹屏宽度,用于后期
-          ...
+          <h2 id="jQuery-简洁版"><a href="#jQuery-简洁版" class="headerlink" title="jQuery 简洁版"></a>jQuery 简洁版</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ol>
+<li>输入框输入点击,生成随机样式的span</li>
+<li>span弹幕从右往左运动</li>
+</ol>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>输入框输入点击,生成随机样式的span</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//弹幕内容</span></div><div class="line"><span class="keyword">var</span> barrageVal = $(<span class="string">'input'</span>).val();</div><div class="line"><span class="comment">//检测的弹屏宽度,用于后期运动距离</span></div><div class="line"><span class="keyword">var</span> widthSize = $(<span class="string">'.barrageShow'</span>).width();</div><div class="line"><span class="keyword">var</span> rightVal = widthSize;</div><div class="line"><span class="comment">//检测的弹屏高度,用于计算弹幕出现位置</span></div><div class="line"><span class="keyword">var</span> heightSize = $(<span class="string">'.barrageShow'</span>).height();</div><div class="line"><span class="comment">//弹幕出现的随机位置</span></div><div class="line"><span class="keyword">var</span> topVal = <span class="built_in">Math</span>.random() * heightSize;</div><div class="line"><span class="comment">//弹幕出现的随机颜色</span></div><div class="line"><span class="keyword">var</span> colorSize = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>];</div><div class="line"><span class="keyword">var</span> colorVal = <span class="string">'#'</span> + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] +</div><div class="line">    colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[</div><div class="line">        <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)];</div><div class="line"><span class="comment">//弹幕出现的随机大小</span></div><div class="line"><span class="keyword">var</span> fontsizeVal = <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">20</span> + <span class="number">12</span>);</div><div class="line"><span class="comment">//弹幕运动的随机速度</span></div><div class="line"><span class="keyword">var</span> speedVal = <span class="built_in">Math</span>.random() * <span class="number">5000</span> + <span class="number">10000</span>;</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/23/关于js自制多屏同步弹幕原理分析/#more" rel="contents">
@@ -739,7 +738,7 @@ span弹幕从右往左运动
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  5,031
+                  5,027
                 </span>
               
 
@@ -777,32 +776,7 @@ span弹幕从右往左运动
 
       
         
-          
-          Airbnb JavaScript Style Guide() {用更合理的方式写 JavaScript
-目录
-类型
-对象
-数组
-字符串
-函数
-属性
-变量
-提升
-比较运算符 &amp; 等号
-块
-注释
-空白
-逗号
-分号
-类型转化
-命名规则
-存取器
-构造函数
-事件
-模块
-jQuery
-ECMAScri
-          ...
+          <p><em>用更合理的方式写 JavaScript</em><br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/15/es5-转载/#more" rel="contents">
@@ -923,7 +897,7 @@ ECMAScri
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  292
+                  297
                 </span>
               
 
@@ -961,10 +935,7 @@ ECMAScri
 
       
         
-          
-          1.先来一个例子:
-123456&lt;script type="text/html" id="template"&gt;&lt;ul&gt;    &lt;li&gt;'&#123;&#123;'name'&#125;&#125;'&lt;/li&gt;    &lt;li&gt;'&#123;&
-          ...
+          <p>简单封装template<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/25/简单封装templatejs/#more" rel="contents">
@@ -1123,12 +1094,7 @@ ECMAScri
 
       
         
-          
-          瀑布流布局,其实是一种绝对定位(absolute)布局.
-原理分析:
-1.html,css结构 : 子绝父相
-123456789101112131415&lt;body&gt;&lt;div class="items"&gt;&lt;div class="item"&gt;&lt;/div&gt;&
-          ...
+          <p>瀑布流布局,其实是一种绝对定位(absolute)布局.</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/04/12/jQuery瀑布流技术封装并制定插件/#more" rel="contents">
@@ -1337,7 +1303,7 @@ ECMAScri
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共15.8k字</span>
+  <span class="post-count">博客全站共16.0k字</span>
 </div>
 
         

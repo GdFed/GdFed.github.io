@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gdfed.github.io/"/>
-  <updated>2017-08-24T08:05:43.032Z</updated>
+  <updated>2017-08-31T12:03:41.739Z</updated>
   <id>https://gdfed.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://gdfed.github.io/2017/06/24/3D%E5%85%A8%E6%99%AF%E5%9B%BE%E7%89%87%E5%AE%9E%E7%8E%B0/"/>
     <id>https://gdfed.github.io/2017/06/24/3D全景图片实现/</id>
     <published>2017-06-24T07:22:58.000Z</published>
-    <updated>2017-08-24T08:05:43.032Z</updated>
+    <updated>2017-08-31T12:03:41.739Z</updated>
     
     <content type="html"><![CDATA[<h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><h5 id="科普"><a href="#科普" class="headerlink" title="科普"></a><strong>科普</strong></h5><p>全景图共分为三种：</p>
 <p>①球面全景图</p>
@@ -31,6 +31,7 @@
 <p>一个立方体，有六个面组成，所以就需要六张图片啦。自身的位置位于立方体中间。这也是最常见的全景图构建模式。</p>
 <p>③柱状全景图</p>
 <p>这个则是前两种构建模式的结合版啦。</p>
+<a id="more"></a>
 <h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h5><p>在浏览器中实现3D全景浏览开发，首先需要几样东西：</p>
 <p>①支持WebGL和canvas的浏览器</p>
 <p>②Three.js</p>
@@ -137,7 +138,15 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h4&gt;&lt;h5 id=&quot;科普&quot;&gt;&lt;a href=&quot;#科普&quot; class=&quot;headerlink&quot; title=&quot;科普&quot;&gt;&lt;/a&gt;&lt;strong&gt;科普&lt;/s
+      &lt;h4 id=&quot;准备&quot;&gt;&lt;a href=&quot;#准备&quot; class=&quot;headerlink&quot; title=&quot;准备&quot;&gt;&lt;/a&gt;准备&lt;/h4&gt;&lt;h5 id=&quot;科普&quot;&gt;&lt;a href=&quot;#科普&quot; class=&quot;headerlink&quot; title=&quot;科普&quot;&gt;&lt;/a&gt;&lt;strong&gt;科普&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;全景图共分为三种：&lt;/p&gt;
+&lt;p&gt;①球面全景图&lt;/p&gt;
+&lt;p&gt;利用一张全景图围成一个球，自身位置位于球体内。由于图片是矩形，所以最上和最下的缝合处很明显就能够看得出来。&lt;/p&gt;
+&lt;p&gt;球面全景图是最接近人眼的构建模式，若利用多个立面构建，拼接方法繁琐，性能消耗高。&lt;/p&gt;
+&lt;p&gt;因此，本文介绍的是上述通过一张全景图构成的球面全景图。&lt;/p&gt;
+&lt;p&gt;②立方体全景图&lt;/p&gt;
+&lt;p&gt;一个立方体，有六个面组成，所以就需要六张图片啦。自身的位置位于立方体中间。这也是最常见的全景图构建模式。&lt;/p&gt;
+&lt;p&gt;③柱状全景图&lt;/p&gt;
+&lt;p&gt;这个则是前两种构建模式的结合版啦。&lt;/p&gt;
     
     </summary>
     
@@ -157,7 +166,7 @@
     <link href="https://gdfed.github.io/2017/05/23/%E5%85%B3%E4%BA%8Ejs%E8%87%AA%E5%88%B6%E5%A4%9A%E5%B1%8F%E5%90%8C%E6%AD%A5%E5%BC%B9%E5%B9%95%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/"/>
     <id>https://gdfed.github.io/2017/05/23/关于js自制多屏同步弹幕原理分析/</id>
     <published>2017-05-23T12:17:04.000Z</published>
-    <updated>2017-08-17T12:36:59.451Z</updated>
+    <updated>2017-08-31T12:03:48.510Z</updated>
     
     <content type="html"><![CDATA[<h2 id="jQuery-简洁版"><a href="#jQuery-简洁版" class="headerlink" title="jQuery 简洁版"></a>jQuery 简洁版</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ol>
 <li>输入框输入点击,生成随机样式的span</li>
@@ -165,6 +174,7 @@
 </ol>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>输入框输入点击,生成随机样式的span</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//弹幕内容</span></div><div class="line"><span class="keyword">var</span> barrageVal = $(<span class="string">'input'</span>).val();</div><div class="line"><span class="comment">//检测的弹屏宽度,用于后期运动距离</span></div><div class="line"><span class="keyword">var</span> widthSize = $(<span class="string">'.barrageShow'</span>).width();</div><div class="line"><span class="keyword">var</span> rightVal = widthSize;</div><div class="line"><span class="comment">//检测的弹屏高度,用于计算弹幕出现位置</span></div><div class="line"><span class="keyword">var</span> heightSize = $(<span class="string">'.barrageShow'</span>).height();</div><div class="line"><span class="comment">//弹幕出现的随机位置</span></div><div class="line"><span class="keyword">var</span> topVal = <span class="built_in">Math</span>.random() * heightSize;</div><div class="line"><span class="comment">//弹幕出现的随机颜色</span></div><div class="line"><span class="keyword">var</span> colorSize = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>];</div><div class="line"><span class="keyword">var</span> colorVal = <span class="string">'#'</span> + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] +</div><div class="line">    colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[</div><div class="line">        <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)] + colorSize[<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">16</span>)];</div><div class="line"><span class="comment">//弹幕出现的随机大小</span></div><div class="line"><span class="keyword">var</span> fontsizeVal = <span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random() * <span class="number">20</span> + <span class="number">12</span>);</div><div class="line"><span class="comment">//弹幕运动的随机速度</span></div><div class="line"><span class="keyword">var</span> speedVal = <span class="built_in">Math</span>.random() * <span class="number">5000</span> + <span class="number">10000</span>;</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>span弹幕从右往左运动</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (barrageVal.trim()) &#123;</div><div class="line">    <span class="keyword">var</span> dom = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</div><div class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'.barrageShow'</span>).appendChild(dom);</div><div class="line">    $(dom).html(barrageVal)</div><div class="line">          .css(&#123;</div><div class="line">             color: colorVal,</div><div class="line">             fontSize: fontsizeVal,</div><div class="line">             top: topVal</div><div class="line">              &#125;)</div><div class="line">          .animate(&#123;<span class="attr">right</span>: rightVal&#125;, speedVal , <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">                        $(dom).fadeOut();</div><div class="line">              &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <blockquote>
@@ -232,7 +242,12 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;jQuery-简洁版&quot;&gt;&lt;a href=&quot;#jQuery-简洁版&quot; class=&quot;headerlink&quot; title=&quot;jQuery 简洁版&quot;&gt;&lt;/a&gt;jQuery 简洁版&lt;/h2&gt;&lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerli
+      &lt;h2 id=&quot;jQuery-简洁版&quot;&gt;&lt;a href=&quot;#jQuery-简洁版&quot; class=&quot;headerlink&quot; title=&quot;jQuery 简洁版&quot;&gt;&lt;/a&gt;jQuery 简洁版&lt;/h2&gt;&lt;h3 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;输入框输入点击,生成随机样式的span&lt;/li&gt;
+&lt;li&gt;span弹幕从右往左运动&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h3&gt;&lt;p&gt;输入框输入点击,生成随机样式的span&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//弹幕内容&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; barrageVal = $(&lt;span class=&quot;string&quot;&gt;&#39;input&#39;&lt;/span&gt;).val();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//检测的弹屏宽度,用于后期运动距离&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; widthSize = $(&lt;span class=&quot;string&quot;&gt;&#39;.barrageShow&#39;&lt;/span&gt;).width();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; rightVal = widthSize;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//检测的弹屏高度,用于计算弹幕出现位置&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; heightSize = $(&lt;span class=&quot;string&quot;&gt;&#39;.barrageShow&#39;&lt;/span&gt;).height();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//弹幕出现的随机位置&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; topVal = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * heightSize;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//弹幕出现的随机颜色&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; colorSize = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;7&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;a&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;b&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;c&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;d&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;e&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;f&#39;&lt;/span&gt;];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; colorVal = &lt;span class=&quot;string&quot;&gt;&#39;#&#39;&lt;/span&gt; + colorSize[&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)] + colorSize[&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)] +&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    colorSize[&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)] + colorSize[&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)] + colorSize[&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;        &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)] + colorSize[&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;)];&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//弹幕出现的随机大小&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; fontsizeVal = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.ceil(&lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;12&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//弹幕运动的随机速度&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; speedVal = &lt;span class=&quot;built_in&quot;&gt;Math&lt;/span&gt;.random() * &lt;span class=&quot;number&quot;&gt;5000&lt;/span&gt; + &lt;span class=&quot;number&quot;&gt;10000&lt;/span&gt;;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -250,9 +265,9 @@
     <link href="https://gdfed.github.io/2017/05/15/es5-%E8%BD%AC%E8%BD%BD/"/>
     <id>https://gdfed.github.io/2017/05/15/es5-转载/</id>
     <published>2017-05-15T12:40:41.000Z</published>
-    <updated>2017-08-17T11:51:26.014Z</updated>
+    <updated>2017-08-31T12:09:24.390Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Airbnb-JavaScript-Style-Guide"><a href="#Airbnb-JavaScript-Style-Guide" class="headerlink" title="Airbnb JavaScript Style Guide() {"></a>Airbnb JavaScript Style Guide() {</h1><p><em>用更合理的方式写 JavaScript</em></p>
+    <content type="html"><![CDATA[<p><em>用更合理的方式写 JavaScript</em><br><a id="more"></a></p>
 <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a><a name="table-of-contents">目录</a></h2><ol>
 <li><a href="#types">类型</a></li>
 <li><a href="#objects">对象</a></li>
@@ -777,11 +792,11 @@
 <p>The above copyright notice and this permission notice shall be<br>included in all copies or substantial portions of the Software.</p>
 <p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND,<br>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF<br>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.<br>IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY<br>CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,<br>TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE<br>SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <p><strong><a href="#table-of-contents">⬆ 回到顶部</a></strong></p>
-<h1 id=""><a href="#" class="headerlink" title="};"></a>};</h1>]]></content>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Airbnb-JavaScript-Style-Guide&quot;&gt;&lt;a href=&quot;#Airbnb-JavaScript-Style-Guide&quot; class=&quot;headerlink&quot; title=&quot;Airbnb JavaScript Style Guide() {&quot;
+      &lt;p&gt;&lt;em&gt;用更合理的方式写 JavaScript&lt;/em&gt;&lt;br&gt;
     
     </summary>
     
@@ -797,9 +812,9 @@
     <link href="https://gdfed.github.io/2017/04/25/%E7%AE%80%E5%8D%95%E5%B0%81%E8%A3%85templatejs/"/>
     <id>https://gdfed.github.io/2017/04/25/简单封装templatejs/</id>
     <published>2017-04-25T07:07:49.000Z</published>
-    <updated>2017-08-17T11:51:05.878Z</updated>
+    <updated>2017-08-31T11:54:24.810Z</updated>
     
-    <content type="html"><![CDATA[<p>1.先来一个例子:</p>
+    <content type="html"><![CDATA[<p>简单封装template<br><a id="more"></a><br>1.先来一个例子:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/html"</span> id=<span class="string">"template"</span>&gt;</div><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li&gt;<span class="string">'&#123;&#123;'</span>name<span class="string">'&#125;&#125;'</span>&lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">    &lt;li&gt;'&#123;&#123;'skill'&#125;&#125;'&lt;/</span>li&gt;</div><div class="line">&lt;<span class="regexp">/ul&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line"><span class="keyword">var</span> data = &#123;</div><div class="line"></div><div class="line"> name: <span class="string">'jack'</span>,</div><div class="line"></div><div class="line"> skill: <span class="string">'jump'</span></div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> templateDom = <span class="built_in">document</span>.getElementById(<span class="string">'template'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> string = templateDom.innerHTML;</div><div class="line"></div><div class="line"><span class="keyword">var</span> reg = <span class="regexp">/'&#123;&#123;'(\w+)'&#125;&#125;'/</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = reg.exec(string);</div><div class="line"></div><div class="line"><span class="keyword">while</span> (result) &#123;</div><div class="line"></div><div class="line">string = string.replace(result[<span class="number">0</span>],data[result[<span class="number">1</span>]]);</div><div class="line"></div><div class="line">result = reg.exec(string);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">document</span>.body.innerHTML = string;</div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
 <p>结果:</p>
@@ -828,8 +843,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;1.先来一个例子:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;
+      &lt;p&gt;简单封装template&lt;br&gt;
     
     </summary>
     
@@ -847,9 +861,10 @@
     <link href="https://gdfed.github.io/2017/04/12/jQuery%E7%80%91%E5%B8%83%E6%B5%81%E6%8A%80%E6%9C%AF%E5%B0%81%E8%A3%85%E5%B9%B6%E5%88%B6%E5%AE%9A%E6%8F%92%E4%BB%B6/"/>
     <id>https://gdfed.github.io/2017/04/12/jQuery瀑布流技术封装并制定插件/</id>
     <published>2017-04-12T07:13:27.000Z</published>
-    <updated>2017-08-17T11:51:35.204Z</updated>
+    <updated>2017-08-31T12:04:54.017Z</updated>
     
     <content type="html"><![CDATA[<p>瀑布流布局,其实是一种绝对定位(absolute)布局.</p>
+<a id="more"></a>
 <p>原理分析:</p>
 <p>1.html,css结构 : 子绝父相</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"items"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
@@ -861,9 +876,6 @@
     <summary type="html">
     
       &lt;p&gt;瀑布流布局,其实是一种绝对定位(absolute)布局.&lt;/p&gt;
-&lt;p&gt;原理分析:&lt;/p&gt;
-&lt;p&gt;1.html,css结构 : 子绝父相&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
     
     </summary>
     
@@ -881,14 +893,14 @@
     <link href="https://gdfed.github.io/2017/03/25/%E5%8E%9F%E7%94%9Fjs%E6%A8%A1%E6%8B%9FjQuery%E5%AF%B9%E8%B1%A1%E8%B0%83%E7%94%A8click%E4%BA%8B%E4%BB%B6%E7%90%86%E8%A7%A3this/"/>
     <id>https://gdfed.github.io/2017/03/25/原生js模拟jQuery对象调用click事件理解this/</id>
     <published>2017-03-25T09:11:20.000Z</published>
-    <updated>2017-08-17T11:51:18.418Z</updated>
+    <updated>2017-08-31T11:55:06.056Z</updated>
     
-    <content type="html"><![CDATA[<p>原生js中,this指向调用的dom元素;<br>jQuery中,事件回调函数中的this也指向dom元素,所以在回调函数中$(this)才是指向jQuery的对象.<br>这个要和jQuery中插件创建里面的this进行区分,里面的this则指向调用对象,即jQuery对象.<br>之前一直对这个不理解,所以现在通过一个例子来进行自己的理解分析:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bodyDom = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</div><div class="line"></div><div class="line"><span class="comment">/*bodyDom.onclick = function () &#123;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">console.log('我是Dom事件');</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&#125;;*/</span></div><div class="line"></div><div class="line">bodyDom.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'我是Dom事件'</span>);</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">ele</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">var</span> dom = <span class="literal">null</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> ele == <span class="string">'object'</span>)&#123;</div><div class="line"></div><div class="line">dom =ele;</div><div class="line"></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">dom = <span class="built_in">document</span>.querySelector(ele);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> objDom = &#123;</div><div class="line"></div><div class="line"><span class="number">0</span>:dom,</div><div class="line"></div><div class="line">length:<span class="number">1</span></div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">objDom.click =<span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (vari = <span class="number">0</span>; i &lt; objDom.length;i++) &#123;</div><div class="line"></div><div class="line"><span class="keyword">var</span> element = objDom[i];</div><div class="line"></div><div class="line">element.addEventListener(<span class="string">"click"</span>,fn); </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">return</span> objDom;</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">$(<span class="string">'body'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'我是$封装事件'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log($(<span class="keyword">this</span>));</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>原生js中,this指向调用的dom元素;<br>jQuery中,事件回调函数中的this也指向dom元素,所以在回调函数中$(this)才是指向jQuery的对象.<br>这个要和jQuery中插件创建里面的this进行区分,里面的this则指向调用对象,即jQuery对象.<br>之前一直对这个不理解,所以现在通过一个例子来进行自己的理解分析:<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"></div><div class="line"><span class="keyword">var</span> bodyDom = <span class="built_in">document</span>.querySelector(<span class="string">'body'</span>);</div><div class="line"></div><div class="line"><span class="comment">/*bodyDom.onclick = function () &#123;</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">console.log('我是Dom事件');</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">&#125;;*/</span></div><div class="line"></div><div class="line">bodyDom.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'我是Dom事件'</span>);</div><div class="line"></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">ele</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">var</span> dom = <span class="literal">null</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> ele == <span class="string">'object'</span>)&#123;</div><div class="line"></div><div class="line">dom =ele;</div><div class="line"></div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line"></div><div class="line">dom = <span class="built_in">document</span>.querySelector(ele);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> objDom = &#123;</div><div class="line"></div><div class="line"><span class="number">0</span>:dom,</div><div class="line"></div><div class="line">length:<span class="number">1</span></div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">objDom.click =<span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (vari = <span class="number">0</span>; i &lt; objDom.length;i++) &#123;</div><div class="line"></div><div class="line"><span class="keyword">var</span> element = objDom[i];</div><div class="line"></div><div class="line">element.addEventListener(<span class="string">"click"</span>,fn); </div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">return</span> objDom;</div><div class="line"></div><div class="line">&#125; </div><div class="line"></div><div class="line">$(<span class="string">'body'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'我是$封装事件'</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log($(<span class="keyword">this</span>));</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;原生js中,this指向调用的dom元素;&lt;br&gt;jQuery中,事件回调函数中的this也指向dom元素,所以在回调函数中$(this)才是指向jQuery的对象.&lt;br&gt;这个要和jQuery中插件创建里面的this进行区分,里面的this则指向调用对象,即jQuery对
+      &lt;p&gt;原生js中,this指向调用的dom元素;&lt;br&gt;jQuery中,事件回调函数中的this也指向dom元素,所以在回调函数中$(this)才是指向jQuery的对象.&lt;br&gt;这个要和jQuery中插件创建里面的this进行区分,里面的this则指向调用对象,即jQuery对象.&lt;br&gt;之前一直对这个不理解,所以现在通过一个例子来进行自己的理解分析:&lt;br&gt;
     
     </summary>
     
@@ -906,7 +918,7 @@
     <link href="https://gdfed.github.io/2017/01/14/Git/"/>
     <id>https://gdfed.github.io/2017/01/14/Git/</id>
     <published>2017-01-14T06:28:41.000Z</published>
-    <updated>2017-08-17T11:51:29.440Z</updated>
+    <updated>2017-08-31T11:56:02.040Z</updated>
     
     <content type="html"><![CDATA[<h2 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h2><h3 id="源代码管理工具-版本控制-的好处"><a href="#源代码管理工具-版本控制-的好处" class="headerlink" title="源代码管理工具(版本控制)的好处"></a>源代码管理工具(版本控制)的好处</h3><p>a、利于团队开发</p>
 <p>b、对于个人开发</p>
@@ -917,7 +929,7 @@
 <li>java：maven</li>
 <li>.net：vss tfs</li>
 </ul>
-<h3 id="源代码管理工具按照功能划分"><a href="#源代码管理工具按照功能划分" class="headerlink" title="源代码管理工具按照功能划分"></a>源代码管理工具按照功能划分</h3><p>a、本地代码管理        –&gt;用于个人开发           –&gt;被淘汰<br>b、集中式源代码管理工具(svn)<br>c、分布式。。。。。。。(git)       –&gt;兼具了a+b的功能</p>
+<h3 id="源代码管理工具按照功能划分"><a href="#源代码管理工具按照功能划分" class="headerlink" title="源代码管理工具按照功能划分"></a>源代码管理工具按照功能划分</h3><p>a、本地代码管理        –&gt;用于个人开发           –&gt;被淘汰<br>b、集中式源代码管理工具(svn)<br>c、分布式。。。。。。。(git)       –&gt;兼具了a+b的功能<br><a id="more"></a></p>
 <h2 id="Git的使用"><a href="#Git的使用" class="headerlink" title="Git的使用"></a>Git的使用</h2><h3 id="git-init-将当前文件夹进行初始化"><a href="#git-init-将当前文件夹进行初始化" class="headerlink" title="git init 将当前文件夹进行初始化"></a>git init 将当前文件夹进行初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">--&gt;一定要明确你要将哪个文件夹被git管理起来</div></pre></td></tr></table></figure>
 <h3 id="git-status-可以查看仓库中的文件状态"><a href="#git-status-可以查看仓库中的文件状态" class="headerlink" title="git status 可以查看仓库中的文件状态"></a>git status 可以查看仓库中的文件状态</h3><ul>
 <li><p>在往git仓库中添加文件的时候，这些刚添加的文件，状态是：未追踪(Untracked)</p>
@@ -948,7 +960,16 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;版本控制工具&quot;&gt;&lt;a href=&quot;#版本控制工具&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具&quot;&gt;&lt;/a&gt;版本控制工具&lt;/h2&gt;&lt;h3 id=&quot;源代码管理工具-版本控制-的好处&quot;&gt;&lt;a href=&quot;#源代码管理工具-版本控制-的好处&quot; cla
+      &lt;h2 id=&quot;版本控制工具&quot;&gt;&lt;a href=&quot;#版本控制工具&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具&quot;&gt;&lt;/a&gt;版本控制工具&lt;/h2&gt;&lt;h3 id=&quot;源代码管理工具-版本控制-的好处&quot;&gt;&lt;a href=&quot;#源代码管理工具-版本控制-的好处&quot; class=&quot;headerlink&quot; title=&quot;源代码管理工具(版本控制)的好处&quot;&gt;&lt;/a&gt;源代码管理工具(版本控制)的好处&lt;/h3&gt;&lt;p&gt;a、利于团队开发&lt;/p&gt;
+&lt;p&gt;b、对于个人开发&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;--&amp;gt;对某个功能的修改操作&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;版本控制工具的种类&quot;&gt;&lt;a href=&quot;#版本控制工具的种类&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具的种类&quot;&gt;&lt;/a&gt;版本控制工具的种类&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;git(github)&lt;/li&gt;
+&lt;li&gt;svn&lt;/li&gt;
+&lt;li&gt;java：maven&lt;/li&gt;
+&lt;li&gt;.net：vss tfs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;源代码管理工具按照功能划分&quot;&gt;&lt;a href=&quot;#源代码管理工具按照功能划分&quot; class=&quot;headerlink&quot; title=&quot;源代码管理工具按照功能划分&quot;&gt;&lt;/a&gt;源代码管理工具按照功能划分&lt;/h3&gt;&lt;p&gt;a、本地代码管理        –&amp;gt;用于个人开发           –&amp;gt;被淘汰&lt;br&gt;b、集中式源代码管理工具(svn)&lt;br&gt;c、分布式。。。。。。。(git)       –&amp;gt;兼具了a+b的功能&lt;br&gt;
     
     </summary>
     
@@ -964,7 +985,7 @@
     <link href="https://gdfed.github.io/2017/01/03/bash%E5%91%BD%E4%BB%A4/"/>
     <id>https://gdfed.github.io/2017/01/03/bash命令/</id>
     <published>2017-01-03T02:17:01.000Z</published>
-    <updated>2017-08-17T11:51:22.131Z</updated>
+    <updated>2017-08-31T12:08:44.160Z</updated>
     
     <content type="html"><![CDATA[<h4 id="shell（壳）"><a href="#shell（壳）" class="headerlink" title="shell（壳）"></a>shell（壳）</h4><ul>
 <li>shell其实它是操作系统内核和用户之间的一个纽带(桥梁)<ul>
@@ -987,6 +1008,7 @@
 </ul>
 </li>
 </ul>
+<a id="more"></a>
 <h4 id="clear-清屏"><a href="#clear-清屏" class="headerlink" title="clear 清屏"></a>clear 清屏</h4><h4 id="Ctrl-C-或者-Q-阻止进程"><a href="#Ctrl-C-或者-Q-阻止进程" class="headerlink" title="Ctrl + C 或者 Q   阻止进程"></a>Ctrl + C 或者 Q   阻止进程</h4><h4 id="pwd-print-working-directory"><a href="#pwd-print-working-directory" class="headerlink" title="pwd(print working directory)"></a>pwd(print working directory)</h4><p>打印出<code>当前</code>目录(文件夹)路径的全名称</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pwd 例如当前位于桌面：c:/users/用户名/desktop</div></pre></td></tr></table></figure>
 <h4 id="ls-list"><a href="#ls-list" class="headerlink" title="ls(list)"></a>ls(list)</h4><p>列举出<code>当前</code>目录（文件夹）下面的所有的<code>直接</code>子文件和子文件夹</p>
@@ -1068,7 +1090,25 @@ ls -a === ls -all === ls --all
     
       &lt;h4 id=&quot;shell（壳）&quot;&gt;&lt;a href=&quot;#shell（壳）&quot; class=&quot;headerlink&quot; title=&quot;shell（壳）&quot;&gt;&lt;/a&gt;shell（壳）&lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;shell其实它是操作系统内核和用户之间的一个纽带(桥梁)&lt;ul&gt;
-&lt;li&gt;用户
+&lt;li&gt;用户操作shell，shell操作操作系统内核，操作系统内核操作计算机硬件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;shell的种类：&lt;ul&gt;
+&lt;li&gt;命令行shell&lt;ul&gt;
+&lt;li&gt;windows:   cmd   powershell&lt;/li&gt;
+&lt;li&gt;mac os :   终端(terminal)&lt;/li&gt;
+&lt;li&gt;linux:   sh   bash&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;图形化shell&lt;ul&gt;
+&lt;li&gt;windows操作系统&lt;/li&gt;
+&lt;li&gt;mac os&lt;/li&gt;
+&lt;li&gt;linux–&amp;gt;ubuntu等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -1084,10 +1124,11 @@ ls -a === ls -all === ls --all
     <link href="https://gdfed.github.io/2016/12/15/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E6%8B%93%E5%B1%95%E7%AF%87/"/>
     <id>https://gdfed.github.io/2016/12/15/微信公众号开发环境搭建拓展篇/</id>
     <published>2016-12-15T12:59:24.000Z</published>
-    <updated>2017-08-17T11:51:12.996Z</updated>
+    <updated>2017-08-31T12:01:06.508Z</updated>
     
     <content type="html"><![CDATA[<p>​        上一篇讲到了新浪云应用，现在我们来讲讲里面的一些好用好玩的东西。</p>
 <p>​        博主会以实践中的过程来讲，目的为了使博主自己对这些有趣的东西加深映象；这也是小白级别的，所以各路大神请绕道或者可以给予更多的点评（博主need you，额..貌似也不会看）。文章里面会更多的讲述博主在<a href="http://lib.csdn.net/base/wechat" target="_blank" rel="external">微信</a>公众号开发环境搭建的时候遇到了一些有趣的东西和大家分享，对于概念性定义会跳转到百度词条，毕竟此时的博主不能对各种术语进行很好的诠释，并且在文中出现的有偏驳之处，还请看客老爷指正，以免博主以及其他看客老爷们入更深的坑。</p>
+<a id="more"></a>
 <h2 id="SAE"><a href="#SAE" class="headerlink" title="SAE"></a>SAE</h2><p>全称Sina App Engine（链接地址：<a href="http://sinaapp.com/" target="_blank" rel="external">http://sinaapp.com/</a>），定义见<a href="http://baike.baidu.com/link?url=rUx6_M533xmcnTew2Fu4TibawJxGsPV0Ms-TLoLE8oJ0TlselybMf4K_1g4fv_dYySNk5Xcsm05iiA2cCnq9Eq" target="_blank" rel="external">百度词条</a>。</p>
 <p>当时作为微信公众号平台开发搭建的一个URL（服务器地址）接口，好处：</p>
 <p>1.免费二级域名，不用环境架构搭建，非常适用于web开发；</p>
@@ -1103,7 +1144,7 @@ ls -a === ls -all === ls --all
     <summary type="html">
     
       &lt;p&gt;​        上一篇讲到了新浪云应用，现在我们来讲讲里面的一些好用好玩的东西。&lt;/p&gt;
-&lt;p&gt;​        博主会以实践中的过程来讲，目的为了使博主自己对这些有趣的东西加深映象；这也是小白级别的，所以各路大神请绕道或者可以给予更多的点评（博主need you，额..
+&lt;p&gt;​        博主会以实践中的过程来讲，目的为了使博主自己对这些有趣的东西加深映象；这也是小白级别的，所以各路大神请绕道或者可以给予更多的点评（博主need you，额..貌似也不会看）。文章里面会更多的讲述博主在&lt;a href=&quot;http://lib.csdn.net/base/wechat&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微信&lt;/a&gt;公众号开发环境搭建的时候遇到了一些有趣的东西和大家分享，对于概念性定义会跳转到百度词条，毕竟此时的博主不能对各种术语进行很好的诠释，并且在文中出现的有偏驳之处，还请看客老爷指正，以免博主以及其他看客老爷们入更深的坑。&lt;/p&gt;
     
     </summary>
     
@@ -1123,9 +1164,9 @@ ls -a === ls -all === ls --all
     <link href="https://gdfed.github.io/2016/12/15/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>https://gdfed.github.io/2016/12/15/微信公众号开发环境搭建/</id>
     <published>2016-12-15T06:48:14.000Z</published>
-    <updated>2017-08-17T11:51:09.939Z</updated>
+    <updated>2017-08-31T12:00:45.592Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="第一章-申请服务器资源"><a href="#第一章-申请服务器资源" class="headerlink" title="第一章 申请服务器资源"></a>第一章 申请服务器资源</h1><h2 id="创建新浪云计算应用"><a href="#创建新浪云计算应用" class="headerlink" title="创建新浪云计算应用"></a>创建新浪云计算应用</h2><h3 id="申请账号"><a href="#申请账号" class="headerlink" title="申请账号"></a>申请账号</h3><p>我们使用SAE新浪云计算平台作为服务器资源，并且申请PHP环境+MySQL数据库作为程序运行环境。<br>申请地址为：<a href="http://t.cn/R4pEhd7" target="_blank" rel="external">http://www.sinacloud.com/ucenter.html</a><br>点击进入之后，使用新浪微博账号登录；登录之后，按照提示注册个人信息即可。 </p>
+    <content type="html"><![CDATA[<h1 id="第一章-申请服务器资源"><a href="#第一章-申请服务器资源" class="headerlink" title="第一章 申请服务器资源"></a>第一章 申请服务器资源</h1><h2 id="创建新浪云计算应用"><a href="#创建新浪云计算应用" class="headerlink" title="创建新浪云计算应用"></a>创建新浪云计算应用</h2><h3 id="申请账号"><a href="#申请账号" class="headerlink" title="申请账号"></a>申请账号</h3><p>我们使用SAE新浪云计算平台作为服务器资源，并且申请PHP环境+MySQL数据库作为程序运行环境。<br>申请地址为：<a href="http://t.cn/R4pEhd7" target="_blank" rel="external">http://www.sinacloud.com/ucenter.html</a><br>点击进入之后，使用新浪微博账号登录；登录之后，按照提示注册个人信息即可。<br><a id="more"></a></p>
 <h3 id="创建新应用"><a href="#创建新应用" class="headerlink" title="创建新应用"></a>创建新应用</h3><p>回到首页，在菜单顶部选择 <em>控制台</em> ，再选择 <em>云应用SAE</em> ；进入SAE应用列表，点击下侧的 <em>创建应用</em>，这时会弹出提示， 禁止放置违法违规内容，点击 <em>继续创建</em>；开发语言选择<em>PHP</em>，运行环境为 <em>标准环境</em>，语言版本 <em>5.3</em>，代码管理选择 <em>SVN</em>（新浪云支持<a href="http://lib.csdn.net/base/git" target="_blank" rel="external">Git</a>、SVN、代码打包上传三种提交方式，具体请参考：<a href="http://www.sinacloud.com/doc/sae/tutorial/code-deploy.html" target="_blank" rel="external">https://www.sinacloud.com/doc/sae/tutorial/code-deploy.html</a>），二级域名自己想一个名字，应用名称可以用系统默认填的，然后点击右方的 <em>创建应用</em>，应用创建成功。并自动跳转到应用列表中，可以看到已经有刚才创建的这个应用。</p>
 <h3 id="创建版本"><a href="#创建版本" class="headerlink" title="创建版本"></a>创建版本</h3><p>点击刚才创建的应用名称，进入应用主页；点击左侧的 <em>应用管理</em> 下面的 <em>代码管理</em>，在代码管理中，选择使用SVN托管的方式。不要使用云空间和Git的方式，跳转到代码管理，点击右侧的“创建版本”，版本号默认为1，点击创建，有时会弹出安全登录，需要输入安全密码，如果不知道或者忘记了，就点里面的找回密码，重新设置一下。验证通过之后，到这里，就成功创建了一个域名URL为 <a href="http://***.sinaapp.com/" target="_blank" rel="external">http://***.sinaapp.com/</a> 的应用了，记住你的这个URL，后面将会用到。</p>
 <h3 id="上传代码"><a href="#上传代码" class="headerlink" title="上传代码"></a>上传代码</h3><p>下述代码index.<a href="http://lib.csdn.net/base/php" target="_blank" rel="external">php</a>是一个<a href="http://lib.csdn.net/base/wechat" target="_blank" rel="external">微信</a>接口文件，看不懂没有关系，你可以暂时不用弄明白它的意思。</p>
@@ -1155,7 +1196,7 @@ ls -a === ls -all === ls --all
     
     <summary type="html">
     
-      &lt;h1 id=&quot;第一章-申请服务器资源&quot;&gt;&lt;a href=&quot;#第一章-申请服务器资源&quot; class=&quot;headerlink&quot; title=&quot;第一章 申请服务器资源&quot;&gt;&lt;/a&gt;第一章 申请服务器资源&lt;/h1&gt;&lt;h2 id=&quot;创建新浪云计算应用&quot;&gt;&lt;a href=&quot;#创建新浪云计算应
+      &lt;h1 id=&quot;第一章-申请服务器资源&quot;&gt;&lt;a href=&quot;#第一章-申请服务器资源&quot; class=&quot;headerlink&quot; title=&quot;第一章 申请服务器资源&quot;&gt;&lt;/a&gt;第一章 申请服务器资源&lt;/h1&gt;&lt;h2 id=&quot;创建新浪云计算应用&quot;&gt;&lt;a href=&quot;#创建新浪云计算应用&quot; class=&quot;headerlink&quot; title=&quot;创建新浪云计算应用&quot;&gt;&lt;/a&gt;创建新浪云计算应用&lt;/h2&gt;&lt;h3 id=&quot;申请账号&quot;&gt;&lt;a href=&quot;#申请账号&quot; class=&quot;headerlink&quot; title=&quot;申请账号&quot;&gt;&lt;/a&gt;申请账号&lt;/h3&gt;&lt;p&gt;我们使用SAE新浪云计算平台作为服务器资源，并且申请PHP环境+MySQL数据库作为程序运行环境。&lt;br&gt;申请地址为：&lt;a href=&quot;http://t.cn/R4pEhd7&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.sinacloud.com/ucenter.html&lt;/a&gt;&lt;br&gt;点击进入之后，使用新浪微博账号登录；登录之后，按照提示注册个人信息即可。&lt;br&gt;
     
     </summary>
     
@@ -1175,37 +1216,36 @@ ls -a === ls -all === ls --all
     <link href="https://gdfed.github.io/2016/08/25/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>https://gdfed.github.io/2016/08/25/常见正则表达式/</id>
     <published>2016-08-25T12:44:28.000Z</published>
-    <updated>2017-08-31T11:06:53.084Z</updated>
+    <updated>2017-08-31T11:53:17.520Z</updated>
     
-    <content type="html"><![CDATA[<p>1 数字：^[0-9]*$</p>
-<p>2 n位的数字：^\d{n}$</p>
-<p>3 至少n位的数字：^\d{n,}$</p>
-<p>4 m-n位的数字：^\d{m,n}$</p>
-<p>5 零和非零开头的数字：^(0|1-9*)$</p>
-<p>6 非零开头的最多带两位小数的数字：^(1-9*)+(.[0-9]{1,2})?$</p>
-<p>7 带1-2位小数的正数或负数：^(-)?\d+(.\d{1,2})?$</p>
-<p>8 正数、负数、和小数：^(-|+)?\d+(.\d+)?$</p>
-<p>9 有两位小数的正实数：^[0-9]+(.[0-9]{2})?$</p>
-<p>10 有1~3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$</p>
-<p>11 非零的正整数：^[1-9]\d$ 或 ^(1-9){1,3} 或 ^+?[1-9][0-9]*</p>
-<p>12 非零的负整数：^-1-90-9”$ 或 ^-[1-9]\d$</p>
-<p>13 非负整数：^\d+ 或 ^[1-9]\d*|0</p>
-<p>14 非正整数：^-[1-9]\d*|0 或 ^((-\d+)|(0+))</p>
-<p>15 非负浮点数：^\d+(.\d+)? 或 ^[1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0</p>
-<p>16 非正浮点数：^((-\d+(.\d+)?)|(0+(.0+)?)) 或 ^(-([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>))|0?.0+|0</p>
-<p>17 正浮点数：^[1-9]\d.\d|0.\d[1-9]\d 或 ^(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>))</p>
-<p>18 负浮点数：^-([1-9]\d.\d|0.\d[1-9]\d) 或 ^(-(([0-9]+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)))</p>
-<p>19 浮点数：^(-?\d+)(.\d+)? 或 ^-?([1-9]\d<em>.\d</em>|0.\d<em>[1-9]\d</em>|0?.0+|0)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div></pre></td><td class="code"><pre><div class="line">二、校验字符的表达式</div><div class="line"></div><div class="line">1 汉字：^[\u4e00-\u9fa5]&#123;0,&#125;$</div><div class="line"></div><div class="line">2 英文和数字：^[A-Za-z0-9]+ 或 ^[A-Za-z0-9]&#123;4,40&#125;</div><div class="line"></div><div class="line">3 长度为3-20的所有字符：^.&#123;3,20&#125;$</div><div class="line"></div><div class="line">4 由26个英文字母组成的字符串：^[A-Za-z]+$</div><div class="line"></div><div class="line">5 由26个大写英文字母组成的字符串：^[A-Z]+$</div><div class="line"></div><div class="line">6 由26个小写英文字母组成的字符串：^[a-z]+$</div><div class="line"></div><div class="line">7 由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</div><div class="line"></div><div class="line">8 由数字、26个英文字母或者下划线组成的字符串：^\w+ 或 ^\w&#123;3,20&#125;</div><div class="line"></div><div class="line">9 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</div><div class="line"></div><div class="line">10 中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+ 或 ^[\u4E00-\u9FA5A-Za-z0-9]&#123;2,20&#125;</div><div class="line"></div><div class="line">11 可以输入含有^%&amp;&apos;,;=?\&quot;等字符：%&amp;&apos;,;=?\x22+</div><div class="line"></div><div class="line">12 禁止输入含有~的字符：~\x22+</div><div class="line"></div><div class="line">三、特殊需求表达式</div><div class="line"></div><div class="line">1 Email地址：^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$</div><div class="line"></div><div class="line">2 域名：a-zA-Z0-9&#123;0,62&#125;(/.a-zA-Z0-9&#123;0,62&#125;)+/.?</div><div class="line"></div><div class="line">3 InternetURL：[a-zA-z]+://\s* 或 ^http://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]*)?$</div><div class="line"></div><div class="line">4 手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d&#123;8&#125;$</div><div class="line"></div><div class="line">5 电话号码(&quot;XXX-XXXXXXX&quot;、&quot;XXXX-XXXXXXXX&quot;、&quot;XXX-XXXXXXX&quot;、&quot;XXX-XXXXXXXX&quot;、&quot;XXXXXXX&quot;和&quot;XXXXXXXX)：^((\d&#123;3,4&#125;-)|\d&#123;3.4&#125;-)?\d&#123;7,8&#125;$</div><div class="line"></div><div class="line">6 国内电话号码(0511-4405222、021-87888822)：\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;</div><div class="line"></div><div class="line">7 身份证号(15位、18位数字)：^\d&#123;15&#125;|\d&#123;18&#125;$</div><div class="line"></div><div class="line">8 短身份证号码(数字、字母x结尾)：^([0-9])&#123;7,18&#125;(x|X)? 或 ^\d&#123;8,18&#125;|[0-9x]&#123;8,18&#125;|[0-9X]&#123;8,18&#125;?</div><div class="line"></div><div class="line">9 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^a-zA-Z&#123;4,15&#125;$</div><div class="line"></div><div class="line">10 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w&#123;5,17&#125;$</div><div class="line"></div><div class="line">11 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.\d)(?=.[a-z])(?=.*[A-Z]).&#123;8,10&#125;$</div><div class="line"></div><div class="line">12 日期格式：^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;</div><div class="line"></div><div class="line">13 一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$</div><div class="line"></div><div class="line">14 一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$</div><div class="line"></div><div class="line">15 钱的输入格式：</div><div class="line"></div><div class="line">16 1.有四种钱的表示形式我们可以接受:&quot;10000.00&quot; 和 &quot;10,000.00&quot;, 和没有 &quot;分&quot; 的 &quot;10000&quot; 和 &quot;10,000&quot;：^1-9*$</div><div class="line"></div><div class="line">17 2.这表示任意一个不以0开头的数字,但是,这也意味着一个字符&quot;0&quot;不通过,所以我们采用下面的形式：^(0|1-9*)$</div><div class="line"></div><div class="line">18 3.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?1-9*)$</div><div class="line"></div><div class="line">19 4.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$</div><div class="line"></div><div class="line">20 5.必须说明的是,小数点后面至少应该有1位数,所以&quot;10.&quot;是不通过的,但是 &quot;10&quot; 和 &quot;10.2&quot; 是通过的：^[0-9]+(.[0-9]&#123;2&#125;)?$</div><div class="line"></div><div class="line">21 6.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">22 7.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">23 8.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*)(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">24 备注：这就是最终结果了,别忘了&quot;+&quot;可以用&quot;*&quot;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</div><div class="line"></div><div class="line">25 xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+.x|X[l|L]$</div><div class="line"></div><div class="line">26 中文字符的正则表达式：[\u4e00-\u9fa5]</div><div class="line"></div><div class="line">27 双字节字符：\x00-\xff (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</div><div class="line"></div><div class="line">28 空白行的正则表达式：\n\s*\r (可以用来删除空白行)</div><div class="line"></div><div class="line">29 HTML标记的正则表达式：&lt;(\S?)&gt;&gt;.?&lt;/\1&gt;|&lt;.? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</div><div class="line"></div><div class="line">30 首尾空白字符的正则表达式：^\s|\s或(^\s)|(\s) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</div><div class="line"></div><div class="line">31 腾讯QQ号：1-9&#123;4,&#125; (腾讯QQ号从10000开始)</div><div class="line"></div><div class="line">32 中国邮政编码：[1-9]\d&#123;5&#125;(?!\d) (中国邮政编码为6位数字)</div><div class="line"></div><div class="line">33 IP地址：\d+.\d+.\d+.\d+ (提取IP地址时有用)</div><div class="line"></div><div class="line">34 IP地址：((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>汉字：^[\u4e00-\u9fa5]{0,}$</p>
+<p>英文和数字：^[A-Za-z0-9]+ 或 ^[A-Za-z0-9]{4,40}</p>
+<p>长度为3-20的所有字符：^.{3,20}$</p>
+<p>由26个英文字母组成的字符串：^[A-Za-z]+$</p>
+<p>由26个大写英文字母组成的字符串：^[A-Z]+$</p>
+<p>由26个小写英文字母组成的字符串：^[a-z]+$</p>
+<p>由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</p>
+<p>由数字、26个英文字母或者下划线组成的字符串：^\w+ 或 ^\w{3,20}</p>
+<p>中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</p>
+<p>中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}</p>
+<p>可以输入含有^%&amp;’,;=?\”等字符：%&amp;’,;=?\x22+</p>
+<p>禁止输入含有~的字符：~\x22+<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div></pre></td><td class="code"><pre><div class="line">一、校验字符的表达式</div><div class="line"></div><div class="line">1 汉字：^[\u4e00-\u9fa5]&#123;0,&#125;$</div><div class="line"></div><div class="line">2 英文和数字：^[A-Za-z0-9]+ 或 ^[A-Za-z0-9]&#123;4,40&#125;</div><div class="line"></div><div class="line">3 长度为3-20的所有字符：^.&#123;3,20&#125;$</div><div class="line"></div><div class="line">4 由26个英文字母组成的字符串：^[A-Za-z]+$</div><div class="line"></div><div class="line">5 由26个大写英文字母组成的字符串：^[A-Z]+$</div><div class="line"></div><div class="line">6 由26个小写英文字母组成的字符串：^[a-z]+$</div><div class="line"></div><div class="line">7 由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$</div><div class="line"></div><div class="line">8 由数字、26个英文字母或者下划线组成的字符串：^\w+ 或 ^\w&#123;3,20&#125;</div><div class="line"></div><div class="line">9 中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$</div><div class="line"></div><div class="line">10 中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+ 或 ^[\u4E00-\u9FA5A-Za-z0-9]&#123;2,20&#125;</div><div class="line"></div><div class="line">11 可以输入含有^%&amp;&apos;,;=?\&quot;等字符：%&amp;&apos;,;=?\x22+</div><div class="line"></div><div class="line">12 禁止输入含有~的字符：~\x22+</div><div class="line">二、数字</div><div class="line">1 数字：^[0-9]*$</div><div class="line"></div><div class="line">2 n位的数字：^\d&#123;n&#125;$</div><div class="line"></div><div class="line">3 至少n位的数字：^\d&#123;n,&#125;$</div><div class="line"></div><div class="line">4 m-n位的数字：^\d&#123;m,n&#125;$</div><div class="line"></div><div class="line">5 零和非零开头的数字：^(0|1-9*)$</div><div class="line"></div><div class="line">6 非零开头的最多带两位小数的数字：^(1-9*)+(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">7 带1-2位小数的正数或负数：^(-)?\d+(.\d&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">8 正数、负数、和小数：^(-|+)?\d+(.\d+)?$</div><div class="line"></div><div class="line">9 有两位小数的正实数：^[0-9]+(.[0-9]&#123;2&#125;)?$</div><div class="line"></div><div class="line">10 有1~3位小数的正实数：^[0-9]+(.[0-9]&#123;1,3&#125;)?$</div><div class="line"></div><div class="line">11 非零的正整数：^[1-9]\d$ 或 ^(1-9)&#123;1,3&#125; 或 ^\+?[1-9][0-9]*</div><div class="line"></div><div class="line">12 非零的负整数：^-1-90-9&quot;$ 或 ^-[1-9]\d$</div><div class="line"></div><div class="line">13 非负整数：^\d+ 或 ^[1-9]\d*|0</div><div class="line"></div><div class="line">14 非正整数：^-[1-9]\d*|0 或 ^((-\d+)|(0+))</div><div class="line"></div><div class="line">15 非负浮点数：^\d+(.\d+)? 或 ^[1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0</div><div class="line"></div><div class="line">16 非正浮点数：^((-\d+(.\d+)?)|(0+(.0+)?)) 或 ^(-([1-9]\d*\.\d*|0\.\d*[1-9]\d*))|0?\.0+|0</div><div class="line"></div><div class="line">17 正浮点数：^[1-9]\d.\d|0.\d[1-9]\d 或 ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))</div><div class="line"></div><div class="line">18 负浮点数：^-([1-9]\d.\d|0.\d[1-9]\d) 或 ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))</div><div class="line"></div><div class="line">19 浮点数：^(-?\d+)(.\d+)? 或 ^-?([1-9]\d*\.\d*|0\.\d*[1-9]\d*|0?\.0+|0)</div><div class="line"></div><div class="line"></div><div class="line">三、特殊需求表达式</div><div class="line"></div><div class="line">1 Email地址：^\w+([-+.]\w+)@\w+([-.]\w+).\w+([-.]\w+)*$</div><div class="line"></div><div class="line">2 域名：a-zA-Z0-9&#123;0,62&#125;(/.a-zA-Z0-9&#123;0,62&#125;)+/.?</div><div class="line"></div><div class="line">3 InternetURL：[a-zA-z]+://\s* 或 ^http://([\w-]+.)+[\w-]+(/[\w-./?%&amp;=]*)?$</div><div class="line"></div><div class="line">4 手机号码：^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d&#123;8&#125;$</div><div class="line"></div><div class="line">5 电话号码(&quot;XXX-XXXXXXX&quot;、&quot;XXXX-XXXXXXXX&quot;、&quot;XXX-XXXXXXX&quot;、&quot;XXX-XXXXXXXX&quot;、&quot;XXXXXXX&quot;和&quot;XXXXXXXX)：^((\d&#123;3,4&#125;-)|\d&#123;3.4&#125;-)?\d&#123;7,8&#125;$</div><div class="line"></div><div class="line">6 国内电话号码(0511-4405222、021-87888822)：\d&#123;3&#125;-\d&#123;8&#125;|\d&#123;4&#125;-\d&#123;7&#125;</div><div class="line"></div><div class="line">7 身份证号(15位、18位数字)：^\d&#123;15&#125;|\d&#123;18&#125;$</div><div class="line"></div><div class="line">8 短身份证号码(数字、字母x结尾)：^([0-9])&#123;7,18&#125;(x|X)? 或 ^\d&#123;8,18&#125;|[0-9x]&#123;8,18&#125;|[0-9X]&#123;8,18&#125;?</div><div class="line"></div><div class="line">9 帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^a-zA-Z&#123;4,15&#125;$</div><div class="line"></div><div class="line">10 密码(以字母开头，长度在6~18之间，只能包含字母、数字和下划线)：^[a-zA-Z]\w&#123;5,17&#125;$</div><div class="line"></div><div class="line">11 强密码(必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间)：^(?=.\d)(?=.[a-z])(?=.*[A-Z]).&#123;8,10&#125;$</div><div class="line"></div><div class="line">12 日期格式：^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;</div><div class="line"></div><div class="line">13 一年的12个月(01～09和1～12)：^(0?[1-9]|1[0-2])$</div><div class="line"></div><div class="line">14 一个月的31天(01～09和1～31)：^((0?[1-9])|((1|2)[0-9])|30|31)$</div><div class="line"></div><div class="line">15 钱的输入格式：</div><div class="line"></div><div class="line">16 1.有四种钱的表示形式我们可以接受:&quot;10000.00&quot; 和 &quot;10,000.00&quot;, 和没有 &quot;分&quot; 的 &quot;10000&quot; 和 &quot;10,000&quot;：^1-9*$</div><div class="line"></div><div class="line">17 2.这表示任意一个不以0开头的数字,但是,这也意味着一个字符&quot;0&quot;不通过,所以我们采用下面的形式：^(0|1-9*)$</div><div class="line"></div><div class="line">18 3.一个0或者一个不以0开头的数字.我们还可以允许开头有一个负号：^(0|-?1-9*)$</div><div class="line"></div><div class="line">19 4.这表示一个0或者一个可能为负的开头不为0的数字.让用户以0开头好了.把负号的也去掉,因为钱总不能是负的吧.下面我们要加的是说明可能的小数部分：^[0-9]+(.[0-9]+)?$</div><div class="line"></div><div class="line">20 5.必须说明的是,小数点后面至少应该有1位数,所以&quot;10.&quot;是不通过的,但是 &quot;10&quot; 和 &quot;10.2&quot; 是通过的：^[0-9]+(.[0-9]&#123;2&#125;)?$</div><div class="line"></div><div class="line">21 6.这样我们规定小数点后面必须有两位,如果你认为太苛刻了,可以这样：^[0-9]+(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">22 7.这样就允许用户只写一位小数.下面我们该考虑数字中的逗号了,我们可以这样：^[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">23 8.1到3个数字,后面跟着任意个 逗号+3个数字,逗号成为可选,而不是必须：^([0-9]+|[0-9]&#123;1,3&#125;(,[0-9]&#123;3&#125;)*)(.[0-9]&#123;1,2&#125;)?$</div><div class="line"></div><div class="line">24 备注：这就是最终结果了,别忘了&quot;+&quot;可以用&quot;*&quot;替代如果你觉得空字符串也可以接受的话(奇怪,为什么?)最后,别忘了在用函数时去掉去掉那个反斜杠,一般的错误都在这里</div><div class="line"></div><div class="line">25 xml文件：^([a-zA-Z]+-?)+[a-zA-Z0-9]+.x|X[l|L]$</div><div class="line"></div><div class="line">26 中文字符的正则表达式：[\u4e00-\u9fa5]</div><div class="line"></div><div class="line">27 双字节字符：\x00-\xff (包括汉字在内，可以用来计算字符串的长度(一个双字节字符长度计2，ASCII字符计1))</div><div class="line"></div><div class="line">28 空白行的正则表达式：\n\s*\r (可以用来删除空白行)</div><div class="line"></div><div class="line">29 HTML标记的正则表达式：&lt;(\S?)&gt;&gt;.?&lt;/\1&gt;|&lt;.? /&gt; (网上流传的版本太糟糕，上面这个也仅仅能部分，对于复杂的嵌套标记依旧无能为力)</div><div class="line"></div><div class="line">30 首尾空白字符的正则表达式：^\s|\s或(^\s)|(\s) (可以用来删除行首行尾的空白字符(包括空格、制表符、换页符等等)，非常有用的表达式)</div><div class="line"></div><div class="line">31 腾讯QQ号：1-9&#123;4,&#125; (腾讯QQ号从10000开始)</div><div class="line"></div><div class="line">32 中国邮政编码：[1-9]\d&#123;5&#125;(?!\d) (中国邮政编码为6位数字)</div><div class="line"></div><div class="line">33 IP地址：\d+.\d+.\d+.\d+ (提取IP地址时有用)</div><div class="line"></div><div class="line">34 IP地址：((?:(?:25[0-5]|2[0-4]\d|[01]?\d?\d).)&#123;3&#125;(?:25[0-5]|2[0-4]\d|[01]?\d?\d))</div></pre></td></tr></table></figure></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;1 数字：^[0-9]*$&lt;/p&gt;
-&lt;p&gt;2 n位的数字：^\d{n}$&lt;/p&gt;
-&lt;p&gt;3 至少n位的数字：^\d{n,}$&lt;/p&gt;
-&lt;p&gt;4 m-n位的数字：^\d{m,n}$&lt;/p&gt;
-&lt;p&gt;5 零和非零开头的数字：^(0|1-9*)$&lt;/p&gt;
-&lt;p&gt;6 非零开头的最多带
+      &lt;p&gt;汉字：^[\u4e00-\u9fa5]{0,}$&lt;/p&gt;
+&lt;p&gt;英文和数字：^[A-Za-z0-9]+ 或 ^[A-Za-z0-9]{4,40}&lt;/p&gt;
+&lt;p&gt;长度为3-20的所有字符：^.{3,20}$&lt;/p&gt;
+&lt;p&gt;由26个英文字母组成的字符串：^[A-Za-z]+$&lt;/p&gt;
+&lt;p&gt;由26个大写英文字母组成的字符串：^[A-Z]+$&lt;/p&gt;
+&lt;p&gt;由26个小写英文字母组成的字符串：^[a-z]+$&lt;/p&gt;
+&lt;p&gt;由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$&lt;/p&gt;
+&lt;p&gt;由数字、26个英文字母或者下划线组成的字符串：^\w+ 或 ^\w{3,20}&lt;/p&gt;
+&lt;p&gt;中文、英文、数字包括下划线：^[\u4E00-\u9FA5A-Za-z0-9_]+$&lt;/p&gt;
+&lt;p&gt;中文、英文、数字但不包括下划线等符号：^[\u4E00-\u9FA5A-Za-z0-9]+ 或 ^[\u4E00-\u9FA5A-Za-z0-9]{2,20}&lt;/p&gt;
+&lt;p&gt;可以输入含有^%&amp;amp;’,;=?\”等字符：%&amp;amp;’,;=?\x22+&lt;/p&gt;
+&lt;p&gt;禁止输入含有~的字符：~\x22+&lt;br&gt;
     
     </summary>
     
@@ -1221,9 +1261,10 @@ ls -a === ls -all === ls --all
     <link href="https://gdfed.github.io/2016/08/12/hello-world/"/>
     <id>https://gdfed.github.io/2016/08/12/hello-world/</id>
     <published>2016-08-12T03:55:10.000Z</published>
-    <updated>2017-08-14T03:19:11.926Z</updated>
+    <updated>2017-08-31T12:06:34.922Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -1236,7 +1277,7 @@ ls -a === ls -all === ls --all
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
