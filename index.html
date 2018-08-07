@@ -27,7 +27,7 @@
                     <li><a href="#2">欧克产品</a></li>
                     <li><a href="#3">门店地址</a></li>
                     <li><a href="#4">联系我们</a></li>
-                </ul>
+                </ul> 
                
             </div>
         </div>
@@ -135,12 +135,14 @@
                 <div class="cont">
                     <ul class="clearfix">
                         <li>
-                            <div class="left">
+                            <div class="left contimg">
                                 <img class="visible-sm-block visible-md-block visible-lg-block lazy" data-original="./img/goods1_pc.png" alt="">
                                 <img class="visible-xs-block lazy" data-original="./img/goods1_h5.png" alt="">
                             </div>
-                            <div class="right">
-                                <img src="./img/icon1.png" alt="">
+                            <div class="right contxt">
+                                <div class="icon">
+                                    <img src="./img/icon1.png" alt="">
+                                </div>
                                 <div class="txt">
                                     <div class="title">
                                         <p class="h">下午茶</p>
@@ -158,8 +160,10 @@
                             </div>
                         </li>
                         <li>
-                            <div class="left">
-                                <img src="./img/icon2.png" alt="">
+                            <div class="left contxt">
+                                <div class="icon">
+                                    <img src="./img/icon2.png" alt="">
+                                </div>
                                 <div class="txt">
                                     <div class="title">
                                         <p class="h">烘 焙</p>
@@ -175,18 +179,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="right">
+                            <div class="right contimg">
                                     <img class="visible-sm-block visible-md-block visible-lg-block lazy" data-original="./img/goods2_pc.png" alt="">
                                     <img class="visible-xs-block lazy" data-original="./img/goods2_h5.png" alt="">
                             </div>
                         </li>
                         <li>
-                            <div class="left">
+                            <div class="left contimg">
                                     <img class="visible-sm-block visible-md-block visible-lg-block lazy" data-original="./img/goods3_pc.png" alt="">
                                     <img class="visible-xs-block lazy" data-original="./img/goods3_h5.png" alt="">
                             </div>
-                            <div class="right">
-                                <img src="./img/icon3.png" alt="">
+                            <div class="right contxt">
+                                <div class="icon">
+                                    <img src="./img/icon3.png" alt="">
+                                </div>
                                 <div class="txt">
                                     <div class="title">
                                         <p class="h">咖啡系列</p>
@@ -204,8 +210,10 @@
                             </div>
                         </li>
                         <li>
-                            <div class="left">
-                                <img src="./img/icon4.png" alt="">
+                            <div class="left contxt">
+                                <div class="icon">
+                                    <img src="./img/icon4.png" alt="">
+                                </div>
                                 <div class="txt">
                                     <div class="title">
                                         <p class="h">简餐系列</p>
@@ -221,7 +229,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="right">
+                            <div class="right contimg">
                                     <img class="visible-sm-block visible-md-block visible-lg-block lazy" data-original="./img/goods4_pc.png" alt="">
                                     <img class="visible-xs-block lazy" data-original="./img/goods4_h5.png" alt="">
                             </div>
@@ -341,7 +349,7 @@
 <script src="./js/bootstrap.min.js"></script>
 <script src="./js/jquery.lazyload.min.js"></script>
 <script>
-    $(document).ready(function() {
+    $(function() {
         $(".carousel").carousel({
             interval: 4000,
             pause: "hover",
@@ -353,6 +361,28 @@
             effect: "fadeIn",
             event: "scroll"
         });
+
+        var wh = $(window).width()
+        var className = wh < 768?'visible-xs-block': 'visible-sm-block'
+        console.log(wh)
+        $('.product .contimg img.'+className).each(function(i,k){
+            $(k).load(function(img){
+                $(k).parent().siblings('.contxt').height(img.currentTarget.height)
+            })
+        })
+        init()
+        $(window).resize(function(){
+            init()
+        })
+        
+        function init() {
+            $('.product .contimg').each(function(index, item){
+                $(item).siblings('.contxt').height(item.clientHeight)
+            })
+            $('.product .contxt .txt').each(function(i,k){
+                $(k).siblings('.icon').width($(k).width())
+            })
+        }
     });
 </script>
 </html>

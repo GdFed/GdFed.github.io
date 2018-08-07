@@ -203,12 +203,10 @@
 }
 .content .product .container ul li:nth-child(1) .left {
   width: 567px;
-  height: 389px;
 }
 .content .product .container ul li:nth-child(1) .right {
   position: relative;
   background: #f7faf7;
-  height: 389px;
   width: 435px;
   display: flex;
   justify-content: center;
@@ -217,7 +215,6 @@
 }
 .content .product .container ul li:nth-child(1) .right img {
   margin-bottom: 10px;
-  margin-left: -190px;
   width: 60px;
   height: 60px;
 }
@@ -254,12 +251,10 @@
 }
 .content .product .container ul li:nth-child(2) .right {
   width: 567px;
-  height: 447px;
 }
 .content .product .container ul li:nth-child(2) .left {
   position: relative;
   background: #06377b;
-  height: 447px;
   width: 435px;
   display: flex;
   justify-content: center;
@@ -268,7 +263,6 @@
 }
 .content .product .container ul li:nth-child(2) .left img {
   margin-bottom: 10px;
-  margin-left: -155px;
   width: 60px;
   height: 60px;
 }
@@ -305,12 +299,10 @@
 }
 .content .product .container ul li:nth-child(3) .left {
   width: 567px;
-  height: 445px;
 }
 .content .product .container ul li:nth-child(3) .right {
   position: relative;
   background: #f7faf7;
-  height: 445px;
   width: 435px;
   display: flex;
   justify-content: center;
@@ -319,7 +311,6 @@
 }
 .content .product .container ul li:nth-child(3) .right img {
   margin-bottom: 10px;
-  margin-left: -160px;
   width: 60px;
   height: 60px;
 }
@@ -356,12 +347,10 @@
 }
 .content .product .container ul li:nth-child(4) .right {
   width: 567px;
-  height: 452px;
 }
 .content .product .container ul li:nth-child(4) .left {
   position: relative;
   background: #06377b;
-  height: 452px;
   width: 435px;
   display: flex;
   justify-content: center;
@@ -370,7 +359,6 @@
 }
 .content .product .container ul li:nth-child(4) .left img {
   margin-bottom: 10px;
-  margin-left: -220px;
   width: 60px;
   height: 60px;
 }
@@ -635,7 +623,6 @@ footer .eqcode p {
   }
   .content .product .container ul li {
     width: 100%;
-    height: 167px;
   }
   .content .product .container ul li:nth-child(1) .left {
     width: 50%;
@@ -649,7 +636,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(1) .right img {
     margin-bottom: 5px;
-    margin-left: -95px;
     width: 30px;
     height: 30px;
   }
@@ -686,7 +672,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(2) .left img {
     margin-bottom: 5px;
-    margin-left: -85px;
     width: 30px;
     height: 30px;
   }
@@ -723,7 +708,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(3) .right img {
     margin-bottom: 5px;
-    margin-left: -105px;
     width: 30px;
     height: 30px;
   }
@@ -760,7 +744,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(4) .left img {
     margin-bottom: 5px;
-    margin-left: -115px;
     width: 30px;
     height: 30px;
   }
@@ -843,7 +826,7 @@ footer .eqcode p {
     margin-top: 2px;
   }
 }
-@media (max-width: 768px) and (min-width: 375px) {
+@media (max-width: 767px) and (min-width: 375px) {
   .navbar {
     min-height: 50px;
     margin: 0;
@@ -983,7 +966,6 @@ footer .eqcode p {
   }
   .content .product .container ul li {
     width: 100%;
-    height: 167px;
   }
   .content .product .container ul li:nth-child(1) .left {
     width: 50%;
@@ -997,7 +979,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(1) .right img {
     margin-bottom: 5px;
-    margin-left: -95px;
     width: 30px;
     height: 30px;
   }
@@ -1034,7 +1015,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(2) .left img {
     margin-bottom: 5px;
-    margin-left: -85px;
     width: 30px;
     height: 30px;
   }
@@ -1071,7 +1051,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(3) .right img {
     margin-bottom: 5px;
-    margin-left: -105px;
     width: 30px;
     height: 30px;
   }
@@ -1108,7 +1087,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(4) .left img {
     margin-bottom: 5px;
-    margin-left: -115px;
     width: 30px;
     height: 30px;
   }
@@ -1191,7 +1169,7 @@ footer .eqcode p {
     margin-top: 2px;
   }
 }
-@media (max-width: 1000px) and (min-width: 769px) {
+@media (max-width: 1000px) and (min-width: 768px) {
   .content {
     margin-bottom: 60px;
   }
@@ -1229,15 +1207,17 @@ footer .eqcode p {
     width: 100%;
   }
   .content .product .container ul li {
-    height: 300px;
     width: 100%;
   }
   .content .product .container ul li:nth-child(1) .left {
     width: 50%;
   }
+  .content .product .container ul li:nth-child(1) .left img {
+    width: 100%;
+  }
   .content .product .container ul li:nth-child(1) .right {
     width: 50%;
-    height: 100%;
+    height: auto;
   }
   .content .product .container ul li:nth-child(2) .right {
     width: 50%;
@@ -1247,7 +1227,7 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(2) .left {
     width: 50%;
-    height: 100%;
+    height: auto;
   }
   .content .product .container ul li:nth-child(3) .left {
     width: 50%;
@@ -1257,7 +1237,7 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(3) .right {
     width: 50%;
-    height: 100%;
+    height: auto;
   }
   .content .product .container ul li:nth-child(4) .right {
     width: 50%;
@@ -1267,6 +1247,6 @@ footer .eqcode p {
   }
   .content .product .container ul li:nth-child(4) .left {
     width: 50%;
-    height: 100%;
+    height: auto;
   }
 }
