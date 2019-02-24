@@ -1,109 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>MWK——莫蒂卡珠宝,出彩人生</title>
+  <title>莫蒂卡珠宝,出彩人生</title>
+  <link rel="shortcut icon" href="./favicon.ico" /> 
+  <link rel="stylesheet" href="./css/init.css">
+  <!-- <link rel="stylesheet" href="./css/swiper.min.css"> -->
   <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/certify.css">
 </head>
 
 <body>
-  <div class="logo">
-    <img src="./img/logo.png" alt="">
-  </div>
-  <ul id="menu">
-      <li>关于品牌</li>
-      <li>精品系列</li>
-      <li>资讯动态</li>
-      <li>门店形象</li>
-      <li>会员尊享</li>
-      <li>联系我们</li>
-    </ul>
-  <div id="fullPage">
-    <div class="section">
-      <div class="top-bar">
-          <img src="./img/bg1.png" alt="" class="bg">
-          <div class="line"></div>
-          <img src="./img/logo-bg.png" alt="" class="logo">
-      </div>
-    </div>
-    <div class="section">
-      <div class="revivalOfLearning">
-        <img src="./img/people1.png" alt="">
-        <img src="./img/people2.png" alt="">
-      </div>
-    </div>
-    <div class="section intro">
-      <div class="introduct">
-          <img src="./img/intro-bg.png" alt="">
-      </div>
-    </div>
-    <div class="section intro">
-      <div class="key">
-          <img src="./img/key.png" alt="">
-          <!-- <div class="item i1">
-            <span class="txt">时尚潮流</span>
-            <span class="dot"></span>
-          </div>
-          <div class="item i2">
-            <span class="dot"></span>
-            <span class="txt">时尚潮流</span>
-          </div>
-          <div class="item i3">
-            <span class="txt">时尚潮流</span>
-            <span class="dot"></span>
-          </div>
-          <div class="item i4">
-            <span class="txt">时尚潮流</span>
-            <span class="dot"></span>
-          </div>
-          <div class="item i5">
-            <span class="txt">时尚潮流</span>
-            <span class="dot"></span>
-          </div> -->
-      </div>
-    </div>
-    <div class="section intro">
-      <div class="design">
-          <img src="./img/design-bg.png" alt="">
-      </div>
-    </div>
-    <div class="section intro">
-        <div class="pro1">
-            <img src="./img/product1.png" alt="">
-        </div>
-      </div>
-    <div class="section intro">
-      <div class="style">
-          <img src="./img/style-bg.png" alt="">
-      </div>
-    </div>
-    <div class="section intro">
-        <div class="pro2">
-            <img src="./img/product2.png" alt="">
-        </div>
-    </div>
-  </div>
+  <div id="app"></div>
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/fullPage.js/2.9.6/jquery.fullpage.min.js"></script>
+<script src="./script/jquery.3.3.0.js"></script>
+<!-- <script src="./script/swiper.min.js"></script> -->
+<script src="./script/vendors.js"></script>
+<script src="./script/main.js"></script>
 <script type="text/javascript">
+  // var certifySwiper = new Swiper('#certify .swiper-container', {
+  //     watchSlidesProgress: true,
+  //     slidesPerView: 'auto',
+  //     centeredSlides: true,
+  //     loop: true,
+  //     loopedSlides: 9,
+  //     // autoplay: true,
+  //     navigation: {
+  //       nextEl: '.swiper-button-next',
+  //       prevEl: '.swiper-button-prev',
+  //     },
+  //     pagination: {
+  //       el: '.swiper-pagination',
+  //       //clickable :true,
+  //     },
+  //     on: {
+  //       progress: function(progress) {
+  //         for (i = 0; i < this.slides.length; i++) {
+  //           var slide = this.slides.eq(i);
+  //           var slideProgress = this.slides[i].progress;
+  //           modify = 1;
+  //           if (Math.abs(slideProgress) > 1) {
+  //             modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
+  //           }
+  //           translate = slideProgress * modify * 240 + 'px';
+  //           scale = 1 - Math.abs(slideProgress) / 5;
+  //           zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+  //           slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+  //           slide.css('zIndex', zIndex);
+  //           slide.css('opacity', 1);
+  //           if (Math.abs(slideProgress) > 3) {
+  //             slide.css('opacity', 0);
+  //           }
+  //         }
+  //       },
+  //       setTransition: function(transition) {
+  //         for (var i = 0; i < this.slides.length; i++) {
+  //           var slide = this.slides.eq(i)
+  //           slide.transition(transition);
+  //         }
+
+  //       }
+  //     }
+
+  //   });
   $(function(){
-    $('#fullPage').fullpage({
-      afterLoad (anchorLink, index) {
-        if (index > 1) {
-          $('#menu').addClass('black')
-        } else {
-          $('#menu').removeClass('black')
-        }
+    var timer = null
+    setTimeout(function(){
+      $('video').each(function(){
+        this.play()
+      })
+      $('.topbar').addClass('show')
+    },2000)
+    $('.logo').addClass('hide')
+    $('.banner').addClass('start')
+
+    $('#menu .item').mouseenter(function(){
+      var index = $(this).index();
+      timer = setTimeout(function(){
+        $('#nav .item').eq(index).addClass('show')
+      }, 500)
+    })
+    $('#menu .item').mouseleave(function(){
+      clearTimeout(timer);
+      $('#nav .item').removeClass('show')
+    })
+
+    var topHeight = $('.topbar').height()
+    $(window).scroll( function() {
+      if ($(window).scrollTop() > 500) {
+        $('.topbar .slogen').addClass('hide').siblings().hide()
+      } else {
+        $('.topbar .slogen').removeClass('hide').siblings().show()
       }
     })
-    $('#menu').addClass('show')
-    $('.logo').addClass('hide')
-    $('.top-bar').addClass('start')
+
+    // $('.key').on('click', '.item', function () {
+    //   console.log(1)
+    //   location.hash = 'type/'+$(this).data('type')
+    // })
   })
   </script>
 </html>
