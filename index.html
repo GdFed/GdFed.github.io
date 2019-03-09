@@ -79,6 +79,7 @@
 
     $('#menu .item').mouseenter(function(){
       var index = $(this).index();
+      if (index==4)return
       timer = setTimeout(function(){
         $('#nav .item').eq(index).addClass('show')
       }, 500)
