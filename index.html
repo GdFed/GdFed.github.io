@@ -7,7 +7,6 @@
   <title>莫蒂卡珠宝,出彩人生</title>
   <link rel="shortcut icon" href="./favicon.ico" /> 
   <link rel="stylesheet" href="./css/init.css">
-  <!-- <link rel="stylesheet" href="./css/swiper.min.css"> -->
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/certify.css">
@@ -17,55 +16,9 @@
   <div id="app"></div>
 </body>
 <script src="./script/jquery.3.3.0.js"></script>
-<!-- <script src="./script/swiper.min.js"></script> -->
 <script src="./script/vendors.js"></script>
 <script src="./script/main.js"></script>
 <script type="text/javascript">
-  // var certifySwiper = new Swiper('#certify .swiper-container', {
-  //     watchSlidesProgress: true,
-  //     slidesPerView: 'auto',
-  //     centeredSlides: true,
-  //     loop: true,
-  //     loopedSlides: 9,
-  //     // autoplay: true,
-  //     navigation: {
-  //       nextEl: '.swiper-button-next',
-  //       prevEl: '.swiper-button-prev',
-  //     },
-  //     pagination: {
-  //       el: '.swiper-pagination',
-  //       //clickable :true,
-  //     },
-  //     on: {
-  //       progress: function(progress) {
-  //         for (i = 0; i < this.slides.length; i++) {
-  //           var slide = this.slides.eq(i);
-  //           var slideProgress = this.slides[i].progress;
-  //           modify = 1;
-  //           if (Math.abs(slideProgress) > 1) {
-  //             modify = (Math.abs(slideProgress) - 1) * 0.3 + 1;
-  //           }
-  //           translate = slideProgress * modify * 240 + 'px';
-  //           scale = 1 - Math.abs(slideProgress) / 5;
-  //           zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
-  //           slide.transform('translateX(' + translate + ') scale(' + scale + ')');
-  //           slide.css('zIndex', zIndex);
-  //           slide.css('opacity', 1);
-  //           if (Math.abs(slideProgress) > 3) {
-  //             slide.css('opacity', 0);
-  //           }
-  //         }
-  //       },
-  //       setTransition: function(transition) {
-  //         for (var i = 0; i < this.slides.length; i++) {
-  //           var slide = this.slides.eq(i)
-  //           slide.transition(transition);
-  //         }
-
-  //       }
-  //     }
-
-  //   });
   $(function(){
     var timer = null
     setTimeout(function(){
@@ -79,7 +32,6 @@
 
     $('#menu .item').mouseenter(function(){
       var index = $(this).index();
-      if (index==4)return
       timer = setTimeout(function(){
         $('#nav .item').eq(index).addClass('show')
       }, 500)
@@ -97,11 +49,6 @@
         $('.topbar .slogen').removeClass('hide').siblings().show()
       }
     })
-
-    // $('.key').on('click', '.item', function () {
-    //   console.log(1)
-    //   location.hash = 'type/'+$(this).data('type')
-    // })
   })
   </script>
 </html>
